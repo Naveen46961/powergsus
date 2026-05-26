@@ -1,0 +1,77 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 32px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  background-color: var(--bg-main);
+}
+
+/* LEFT */
+
+.header-left h2 {
+  color: var(--text-primary);
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* RIGHT */
+
+.header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+/* PROFILE */
+
+.mini-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+}
+
+.mini-avatar {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #6366f1
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+}
