@@ -151,13 +151,13 @@ export default function App() {
           {/* Submission Fields */}
           <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
             <div className="form-group">
-              <label className="input-label">Email</label>
+              <label className="input-label">Email1</label>
               <div className="input-wrapper">
                 <Mail size={14} className="input-icon-left" />
                 <input
                   type="email"
                   placeholder="you@company.com"
-                  className="form-input"
+                  className="login-form"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function App() {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
-                  className="form-input"
+                  className="login-form"
                 />
                 <button
                   type="button"

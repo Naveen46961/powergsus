@@ -553,7 +553,6 @@ body {
 .form-group {
   display: flex;
   flex-direction: column;
-
   gap: 0.4rem;
 }
 
@@ -590,38 +589,34 @@ body {
 
 .input-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 .input-icon-left {
   position: absolute;
-
-  left: 0.75rem;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
 
   color: #4b5563;
-
   pointer-events: none;
 }
 
-.form-input {
+.login-form {
   width: 100%;
 
-  padding: 0.7rem 1rem 0.7rem 2rem;
+  height: 50px;
+
+  padding: 14px 35px !important;
 
   border-radius: 8px;
-
   border: 1px solid #1f2937;
 
   background-color: #13161c;
-
   color: #e5e7eb;
 
   font-size: 0.8rem;
 
   outline: none;
-
-  transition: border-color 0.2s ease;
 }
 
 .form-input:focus {
@@ -636,7 +631,7 @@ body {
 
 .password-toggle-btn {
   position: absolute;
-
+  bottom: 16px;
   right: 0.75rem;
 
   border: none;
