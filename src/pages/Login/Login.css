@@ -66,23 +66,189 @@ body {
 
 /* GLOW EFFECT */
 
-.radial-glow {
+/* .radial-glow::before {
+  content: "";
   position: absolute;
-  bottom: 20%;
-  left: 30%;
-
-  width: 300px;
-  height: 300px;
-
-  background-color: rgba(139, 92, 246, 0.08);
-
+  inset: -10%;
   border-radius: 50%;
-
-  filter: blur(100px);
-
-  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 200deg,
+    rgba(255, 255, 255, 0.6) 260deg,
+    rgba(160, 180, 255, 0.15) 290deg,
+    transparent 330deg
+  );
+  animation: lightSweep 5s linear infinite;
+  mix-blend-mode: screen;
 }
 
+@keyframes lightSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+.radial-glow {
+  position: absolute;
+
+  /* CENTER POSITION */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 420px;
+  height: 420px;
+
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.radial-glow::before,
+.radial-glow::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.5) 0%,
+    rgba(109, 60, 220, 0.2) 40%,
+    transparent 72%
+  );
+
+  animation: glowFillBloom 6s ease-out infinite;
+}
+
+.radial-glow::after {
+  animation-delay: -3s;
+}
+
+@keyframes glowFillBloom {
+  0% {
+    transform: scale(0.05);
+    opacity: 1;
+    filter: blur(24px);
+  }
+
+  40% {
+    opacity: 0.7;
+    filter: blur(10px);
+  }
+
+  75% {
+    transform: scale(1);
+    opacity: 0.15;
+    filter: blur(2px);
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 0;
+    filter: blur(0px);
+  }
+}
+
+.radial-glow .ring1,
+.radial-glow .ring2 {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+
+  border: 2px solid rgba(139, 92, 246, 0.8);
+
+  box-shadow:
+    0 0 28px 10px rgba(139, 92, 246, 0.4),
+    inset 0 0 24px 8px rgba(139, 92, 246, 0.18);
+
+  animation: glowMorphExpand 6s ease-out infinite;
+}
+
+.radial-glow .ring2 {
+  border-width: 1px;
+  border-color: rgba(109, 60, 220, 0.45);
+  animation-delay: -3s;
+}
+
+@keyframes glowMorphExpand {
+  0% {
+    transform: scale(0.03);
+    opacity: 1;
+    filter: blur(28px);
+
+    box-shadow:
+      0 0 40px 24px rgba(139, 92, 246, 0.9),
+      inset 0 0 40px 20px rgba(139, 92, 246, 0.45);
+  }
+
+  30% {
+    opacity: 1;
+    filter: blur(14px);
+  }
+
+  60% {
+    opacity: 0.9;
+    filter: blur(4px);
+  }
+
+  85% {
+    transform: scale(1);
+    opacity: 0.45;
+    filter: blur(0px);
+
+    box-shadow:
+      0 0 12px 4px rgba(139, 92, 246, 0.22),
+      inset 0 0 10px 3px rgba(139, 92, 246, 0.08);
+  }
+
+  100% {
+    transform: scale(1.12);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+.radial-glow .origin {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+
+  background: rgba(167, 139, 250, 1);
+
+  box-shadow:
+    0 0 10px 5px rgba(139, 92, 246, 0.85),
+    0 0 22px 10px rgba(109, 60, 220, 0.5);
+
+  z-index: 10;
+
+  animation: glowOriginPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowOriginPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(2.5);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /* =========================
    BRAND LOGO
 ========================= */

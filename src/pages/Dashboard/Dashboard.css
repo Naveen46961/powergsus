@@ -34,17 +34,6 @@ body {
   overflow: hidden;
 }
 
-/* --- SIDEBAR --- */
-.sidebar {
-  width: 260px;
-  background-color: var(--bg-sidebar);
-  border-right: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 24px 16px;
-}
-
 .logo-section {
   display: flex;
   align-items: center;

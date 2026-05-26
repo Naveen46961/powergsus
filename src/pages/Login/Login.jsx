@@ -28,6 +28,9 @@ export default function App() {
       <div className="left-panel">
         {/* Glow effect element */}
         <div className="radial-glow"></div>
+        <div className="ring1"></div>
+        <div className="ring2"></div>
+        <div className="origin"></div>
 
         {/* Brand Logo */}
         <div className="brand-logo">
